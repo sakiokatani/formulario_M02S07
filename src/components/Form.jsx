@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 
 function Form(){
 
-    const [name, setName] = useState();
-    const [phone, setPhone] = useState();
-    const [email, setEmail] = useState();
-    const [subject, setSubject] = useState();
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
 
     return(
         <>

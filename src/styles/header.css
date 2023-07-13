@@ -1,7 +1,17 @@
-.header-container-flex{
+.header-component-flex{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: black;
     color: azure;
+}
+
+.header-name button{
+    background-color: transparent;
+    color: aliceblue;
+}
+.header-name button:hover{
+    background-color: transparent;
+    color:blueviolet;
+    cursor: pointer;
 }
