@@ -1,13 +1,20 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
+
+import Button from '../components/Button'
 
 function Form(){
 
-    const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
+    const [nickname, setNickname] = useState("");
+    const [age, setAge] = useState("");
     const [email, setEmail] = useState("");
-    const [subject, setSubject] = useState("");
+    const [password, setPassword] = useState("");
 
+    const nicknameRef = useRef(null);
+    const ageRef = useRef(null);
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
+    
     return(
         <>
         <form>
@@ -15,19 +22,21 @@ function Form(){
 
             <input 
             id="name"
-            placeholder="Nome completo"
+            placeholder="Nickname"
             name = "name"
-            value = {name}
-            onChange={(event) => setName(event.target.value)}
+            value = {nickname}
+            ref={nicknameRef}
+            onChange={(event) => setNickname(event.target.value)}
             required
             >
             </input> 
             
                 <input 
-            id="phone"
-            placeholder="Telefone"
-            name = {phone}
-            onChange={(event) => setPhone(event.target.value)}
+            id="age"
+            placeholder="Idade"
+            name = {age}
+            ref={ageRef}
+            onChange={(event) => setAge(event.target.value)}
             >
             </input> 
 
@@ -35,20 +44,30 @@ function Form(){
             id="email"
             placeholder="e-mail"
             name = {email}
+            ref={emailRef}
             onChange={(event) => setEmail(event.target.value)}
             required
             >
             </input> 
 
             <input 
-            id="assunto"
-            placeholder="assunto"
-            nome={subject}
-            onChange={(event) => setSubject(event.target.value)}
+            id="password"
+            placeholder="Senha"
+            nome={password}
+            ref={passwordRef}
+            onChange={(event) => setPassword(event.target.value)}
             >
             </input>
             </div>
         </form>
+            <div>
+            <Button
+                nicknameRef={nicknameRef}
+                ageRef={ageRef}
+                emailRef={emailRef}
+                passwordRef={passwordRef}
+            />
+            </div>
         </>
     )
 }
