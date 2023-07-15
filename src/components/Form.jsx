@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 
 import Button from '../components/Button'
 
-function Form(){
+function Form({onButtonClick}){
 
     const [nickname, setNickname] = useState("");
     const [age, setAge] = useState("");
@@ -66,6 +66,7 @@ function Form(){
                 ageRef={ageRef}
                 emailRef={emailRef}
                 passwordRef={passwordRef}
+                onButtonClick={onButtonClick}
             />
             </div>
         </>
