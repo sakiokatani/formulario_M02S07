@@ -52,11 +52,15 @@ function Button({ nicknameRef, ageRef, emailRef, passwordRef }) {
   };
 
   return (
-    <div>
+    <>
+    <div className="button">
       <button onClick={checkvalues}>Enviar</button>
       <div>{message}</div>
+      </div>
+      <div className="card">
       {cardVisible && <Card cardData={cardData} cardVisible={cardVisible} />}
-    </div>
+      </div>
+    </>
   );
 }
 
