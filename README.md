@@ -1,3 +1,6 @@
+#PROJETO EM CONSTRUÇÃO. A PEDIDO DOS PROFESSORES, OS COMPONENTES E SUAS RESPECTIVAS ATUALIZAÇÕES SEGUEM SEPARADOS. O MERGE SERÁ DADO APENAS AO FINAL DO MÓDULO.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
