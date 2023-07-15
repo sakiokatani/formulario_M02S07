@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
-import Card from "./Card";
-
+import Card from "../components/Card";
 
 function Button({ nicknameRef, ageRef, emailRef, passwordRef }) {
   const [message, setMessage] = useState("");
-  const [showCard, setShowCard] = useState(false);
-  
+  const [cardVisible, setCardVisible] = useState(false);
+  const [cardData, setCardData] = useState(null)
+
+
   const checkvalues = () => {
     const nickname = nicknameRef.current?.value;
     const age = ageRef.current?.value;
@@ -13,7 +14,7 @@ function Button({ nicknameRef, ageRef, emailRef, passwordRef }) {
     const password = passwordRef.current?.value;
 
     if (
-      nickname.trim().length === 0||
+      nickname.trim().length === 0 ||
       email.trim().length === 0 ||
       age.trim().length === 0 ||
       password.trim().length === 0
@@ -30,21 +31,29 @@ function Button({ nicknameRef, ageRef, emailRef, passwordRef }) {
       emailRef.current.value = "";
       ageRef.current.value = "";
       passwordRef.current.value = "";
-      
+
+      setCardVisible(true);
+      handleButtonClick()
     }
   };
 
-  const renderCard=()=>{
-    return <Card></Card>
-  }
+  const handleButtonClick = () => {
+    const nickname = localStorage.getItem("nickname");
+    const age = localStorage.getItem("age");
+    const email = localStorage.getItem("email");
+
+    setCardData({
+      nickname,
+      age,
+      email
+    });
+  };
 
   return (
     <div>
       <button onClick={checkvalues}>Enviar</button>
-      <div>
-      {message}
-      </div>
-      {showCard && <Card />}
+      <div>{message}</div>
+      {cardVisible && <Card cardData={cardData} cardVisible={cardVisible} />}
     </div>
   );
 }

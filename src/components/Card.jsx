@@ -1,34 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+function Card({ cardVisible, cardData }) {
 
 
-function Card(){
-    const [cardData, setCardData] = useState({
-        nickname: "",
-        age: "",
-        email: ""
-      });
-          
-    useEffect(() => {
-        const nickname = localStorage.getItem("nickname");
-        const age = localStorage.getItem("age");
-        const email = localStorage.getItem("email");
-    
-        setCardData({
-        nickname,
-        age,
-        email
-        });
-    }, [cardData]);
-    
+  if (cardVisible) {
     return (
-        <div>
+      <div>
         <ul>
-            <li>Nickname: {cardData.nickname}</li>
-            <li>Age: {cardData.age}</li>
-            <li>Email: {cardData.email}</li>
+          <li>Nickname: {cardData.nickname}</li>
+          <li>Age: {cardData.age}</li>
+          <li>Email: {cardData.email}</li>
         </ul>
-        </div>
+      </div>
     );
-    }
+  } else {
+    return null;
+  }
+}
 
 export default Card;
