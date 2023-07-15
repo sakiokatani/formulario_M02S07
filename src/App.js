@@ -15,11 +15,17 @@ function App() {
   };
 
   return (
-    <div>
+<>
+    <div className="header-wrapper">
       <Header/>
+      </div>
+
+      <div className='body-wrapper'>
       <Form onButtonClick={handleButtonClick} />
       <Card />
     </div>
+
+</>
   );
 }
 

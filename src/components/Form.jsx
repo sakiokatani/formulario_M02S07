@@ -3,6 +3,8 @@ import { useState, useRef } from "react";
 
 import Button from '../components/Button'
 
+import '../styles/form.css';
+
 function Form({handleButtonClick}){
 
     const [nickname, setNickname] = useState("");
@@ -16,9 +18,9 @@ function Form({handleButtonClick}){
     const passwordRef = useRef(null);
     
     return(
-        <>
+        <div className="form-wrapper">
+    <div className="form-group">
         <form>
-            <div className="form-group">
 
             <input 
             id="name"
@@ -58,9 +60,9 @@ function Form({handleButtonClick}){
             onChange={(event) => setPassword(event.target.value)}
             >
             </input>
-            </div>
         </form>
-            <div>
+    </div>
+            <div className="button-wrapper">
             <Button
                 nicknameRef={nicknameRef}
                 ageRef={ageRef}
@@ -69,7 +71,7 @@ function Form({handleButtonClick}){
                 onClick={handleButtonClick}
             />
             </div>
-        </>
+        </div>
     )
 }
 

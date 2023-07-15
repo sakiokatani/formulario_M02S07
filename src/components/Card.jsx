@@ -5,7 +5,7 @@ function Card({ cardVisible, cardData }) {
 
   if (cardVisible) {
     return (
-      <div>
+      <div className="cardContent">
         <ul>
           <li>Nickname: {cardData.nickname}</li>
           <li>Age: {cardData.age}</li>

@@ -1,14 +1,25 @@
 .header-component-flex{
     display: flex;
     flex-direction: row;
+    height: 8vh;
     justify-content: space-between;
     background-color: black;
-    color: azure;
+
+}
+
+.header-name{
+    display: flex;
+    flex-direction: row;
+    min-width: 600px;
+}
+
+.PageTitle{
+    font-weight: 400;
 }
 
 .header-name button{
     background-color: transparent;
-    color: aliceblue;
+    color:  rgb(243, 243, 243)
 }
 .header-name button:hover{
     background-color: transparent;
